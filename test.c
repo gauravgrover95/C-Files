@@ -1,29 +1,82 @@
-// structures inside structures: make a rectanle structure with points
-// array of structures
-// norm function
+#include <stdio.h>
 
+int cmp(int arr1[], int arr2[]) {
 
-#include "stdio.h"
+	int k = 1,i;
+	for(i = 0; i < 129; i++) {
 
-
-struct point {
-	int x;
-	int y;
-};
-
-struct point makePoint(int x, int y) {
-
-	struct point temp;
-	temp.x = x;
-	temp.y = y;
-	return temp;
+		if(arr1[i] != arr2[i]) {
+			k = 0;
+		}
+	}
+	return k;
 }
 
 int main() {
-	struct point pt;
-	pt.x = 1;
-	pt.y = 2;
-	printf("x and y co-ordinates are: %d, %d\n", pt.x, pt.y);
-	pt = makePoint(5, 6);
-	printf("x and y co-ordinates are: %d, %d\n", pt.x, pt.y);
+
+	int i = 0, k = 0;
+	char str1[101];
+	char str2[101];
+
+	scanf("%s%s", str1, str2);
+
+	int counter1[129];
+	int counter2[129];
+
+	for(i = 0; i < 129; i++) {
+		counter1[i] = 0;
+	}
+
+	for(i = 0; i < 129; i++) {
+		counter2[i] = 0;
+	}
+
+	
+
+	for(i = 0; i < 101; i++) {
+		k = str1[i];
+		counter1[k]++;
+	}
+
+
+
+	for(i = 0; i < 101; i++) {
+		k = str2[i];
+		counter2[k]++;
+	}
+
+	
+
+
+
+	for(i = 0; i < 129; i++) {
+		printf("%d",counter1[i]);
+	}
+
+	printf("\n");
+
+	for(i = 0; i < 129; i++) {
+		printf("%d",counter2[i]);
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	if (cmp(counter1, counter2))
+	{
+		printf("yes");
+	} else {
+		printf("no");
+	}
 }

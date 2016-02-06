@@ -1,3 +1,5 @@
+// This is the brute force attempt to sovle the spiral question... Everything is hardcoded and this is a worthless program
+
 #include <stdio.h>
 
 int main() {
